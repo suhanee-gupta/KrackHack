@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+.env
+.env.local
+.env.*
+
+# Logs and debug files
+logs/
+*.log
+*.out
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Python dependency files
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Alembic Migrations (if used)
+migrations/
+
+# Database / Cache
+*.sqlite3
+db.sqlite3
+instance/
+
+# Node.js (if frontend included)
+node_modules/
+package-lock.json
+yarn.lock
+
+# MongoDB dump files (if backups exist locally)
+dump/
+*.bson
+*.json
+
+# JWT Secret Keys or sensitive credentials
+*.pem
+*.crt
+*.key
+
+# Firebase-related
+firebase-debug.log
+firebase.json
+firestore.rules
+firestore.indexes.json
+storage.rules
+
+# Coverage and testing reports
+htmlcov/
+.coverage
+*.cover
+coverage.xml
+pytest_cache/
+
+# Temporary files
+*.swp
+*.swo
