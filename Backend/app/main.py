@@ -14,8 +14,8 @@ import json
 import requests
 llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key="AIzaSyCwkVXBvm66f6r8QHXLwpT4dTaCtyK04GY")
  
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCwkVXBvm66f6r8QHXLwpT4dTaCtyK04GY")
-genai.configure(api_key="AIzaSyCwkVXBvm66f6r8QHXLwpT4dTaCtyK04GY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
 
 # External API URLs (No API Key Needed)
 DESIGNER_AGENT_URL = "https://api-lr.agent.ai/v1/agent/k1mctw3deuvs1dp0/webhook/241457d0"
@@ -30,14 +30,11 @@ app.include_router(auth.router, prefix="/auth")
 
 def call_ai_agent(url, request_text): 
     headers = {"Content-Type": "application/json"}
-    data = {"prompt_file": request_text}  # Replace with actual input
+    data = {"prompt_file": request_text}
     response = requests.post(url, json=data, headers=headers)
-    # print("Status Code:", response.status_code)
-    # print("Response:", response.json())  # If response is JSON
     return response.json()
 
 def call_designer_agent(prompt):
-    # print("promp",prompt)
     ui_json = call_ai_agent(DESIGNER_AGENT_URL, prompt)
     return ui_json
 
