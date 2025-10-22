@@ -18,9 +18,9 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GEMINI_API_KEY)
 genai.configure(api_key=GEMINI_API_KEY)
 
 # External API URLs (No API Key Needed)
-DESIGNER_AGENT_URL = "https://api-lr.agent.ai/v1/agent/k1mctw3deuvs1dp0/webhook/241457d0"
-DEVELOPER_AGENT_URL = "https://api-lr.agent.ai/v1/agent/ethcni1fsprxwt12/webhook/826fbddb"
-PROJECT_MANAGER_KEY = "https://api-lr.agent.ai/v1/agent/qw51s81et2491789/webhook/cb3965e5"
+DESIGNER_AGENT_URL = os.getenv("DESIGNER_AGENT_URL")
+DEVELOPER_AGENT_URL = os.getenv("DEVELOPER_AGENT_URL")
+PROJECT_MANAGER_KEY = os.getenv("PROJECT_MANAGER_KEY")
 
 GIT_REPO_URL = "https://github.com/Ojasvi310/PixelForge.git"
 LOCAL_REPO_PATH = "generated_project"
