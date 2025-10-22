@@ -12,9 +12,9 @@ import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 import json
 import requests
-llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key="AIzaSyCwkVXBvm66f6r8QHXLwpT4dTaCtyK04GY")
- 
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GEMINI_API_KEY)
 genai.configure(api_key=GEMINI_API_KEY)
 
 # External API URLs (No API Key Needed)
